@@ -29,7 +29,7 @@
             <nav class="navbar navbar-light bg-light">
                 <a class="navbar-brand" href="/">
                     <img
-                        src="img/smoke.jpg"
+                        src="img/flower.jpg"
                         width="50"
                         height="50"
                         class="d-inline-block align-top"
@@ -86,8 +86,6 @@
                     </p>
                 </footer>
 
-            <a href="/">Home</a>
-            <a href="contato">Contato</a>
 
         </body>
     </html>
