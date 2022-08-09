@@ -1,0 +1,63 @@
+form{
+    border: 2px solid;
+    border-radius: 1%;
+    margin-left: 125px;
+    margin-top: 30px;
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.personal-informations,.date, .marital-status{
+    width: 33.33%;
+    padding: 2px;
+}
+
+.first-group{
+    display: flex;
+}
+
+.address,.complement{
+    width: 50%;
+    padding: 2px;
+}
+
+.second-group{
+    display: flex;
+}
+
+.city,.state,.cep{
+    width: 33.33%;
+    padding: 2px;
+
+}
+
+.thrid-group{
+    display: flex;
+
+}
+
+.cpf,.rg{
+    width: 50%;
+    padding: 2px;
+}
+
+.fourth-group{
+    display: flex;
+}
+
+.email,.telefone,.cellphone{
+    width: 33.33%;
+    padding: 2px;
+}
+
+.fifth-group{
+    display: flex;
+}
