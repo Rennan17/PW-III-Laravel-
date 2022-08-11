@@ -21,6 +21,9 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{url('css/style.css')}}">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
     </head>
     <body>
@@ -28,13 +31,8 @@
         <body>
             <nav class="navbar navbar-light bg-light">
                 <a class="navbar-brand" href="/">
-                    <img
-                        src="img/flower.jpg"
-                        width="50"
-                        height="50"
-                        class="d-inline-block align-top"
-                        alt="">
-                    Empresa "X"
+                    <i class="devicon-laravel-plain"></i>
+                    Sign Up
                 </a>
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -76,16 +74,14 @@
                         </div>
                     </section>
                 </main>
-             
+
             </div>
 
-               
             <footer>
-                    <p>Desenvolvido por: Rennan Moura<br>
-                        <a href="mailto:rsmoura252@gmail.com">rsmoura252@gmail.com</a>
-                    </p>
-                </footer>
-
+                <p>Desenvolvido por: Rennan Moura<br>
+                    <a href="mailto:rsmoura252@gmail.com">rsmoura252@gmail.com</a>
+                </p>
+            </footer>
 
         </body>
     </html>
