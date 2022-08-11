@@ -18,19 +18,16 @@
             crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{url('css/style.css')}}">
         <link rel="stylesheet" href="{{url('css/form-style.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
     </head>
     <body>
 
         <body>
             <nav class="navbar navbar-light bg-light">
                 <a class="navbar-brand" href="/">
-                    <img
-                        src="img/skull.jpg"
-                        width="50"
-                        height="50"
-                        class="d-inline-block align-top"
-                        alt="">
-                    Empresa "X"
+                <i class="devicon-laravel-plain" width="150" height="150"></i>
+                    Sign Up
                 </a>
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -185,7 +182,7 @@
                 </div>
             </div>
             <br/>
-            <button type="submit" class="btn btn-primary">Entrar</button>
+            <button type="submit" class="btn btn-primary" id="btn-cadastrar-cliente">Entrar</button>
         </form>
 
         <footer>
