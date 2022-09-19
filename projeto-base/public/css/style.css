@@ -24,12 +24,12 @@ body {
 footer {
     display: flex;
     justify-content: center;
-    font-size: 10px;
+    font-size: 20px;
     width: 100%;
     height: 50px;
     margin: auto;
     bottom: 0;
-    position: fixed;
+
     color: #ffffff;
 }
 
@@ -48,4 +48,28 @@ label {
 
 h1 {
     color: #ffffff;
+}
+
+.tableCat {
+    border-radius: 100%;
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableCli{
+    border-radius: 100%;
+    width: 82%;
+ margin-left: 20px;
+
+    
+}
+
+table {
+    border-radius: 1%;
+}
+
+section{
+
+    align-items: center;
 }

@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ClienteController;
+
+// Route::get('categoria', [CategoriaController::class, 'Index']);
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//Route é um classe, que esta sendo acessado pelo metodo get, que está recebendo dois parametros
-Route::get('/cliente', function () {   
-    return view('cliente');
-});
 
-Route::get('/categoria', function () {   
-    return view('categoria');
-});
+
+//Route é um classe, que esta sendo acessado pelo metodo get, que está recebendo dois parametros
+Route::get('cliente', 'App\Http\Controllers\ClienteController@Index'); 
+Route::post('/cliente/inserir','App\Http\Controllers\ClienteController@store');
+
+Route::get('categoria', 'App\Http\Controllers\CategoriaController@Index'); 
+
 
 Route::get('/produto', function () {   
     return view('produto');

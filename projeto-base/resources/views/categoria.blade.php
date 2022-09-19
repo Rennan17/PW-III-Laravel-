@@ -60,7 +60,7 @@
             </nav>
 
             <h1>CADASTRO DE CATEGORIA</h1>
-
+            <section>
             <form>
                 <div class="categoria">
                     <div class="idCategoria">
@@ -81,6 +81,27 @@
                 <button type="submit" class="btn btn-primary" id="btn-cadastrar-categoria">Cadastrar</button>
             </form>
 
+            <br/>
+            <div class="tableCat">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach($categoria as $cat)
+                        <tr>
+
+                            <td>{{$cat->categoria}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+
+                </table>
+            </div>
+            </section>
             <footer>
                 <p>Desenvolvido por: Rennan Moura<br>
                     <a href="mailto:rsmoura252@gmail.com">rsmoura252@gmail.com</a>

@@ -59,21 +59,22 @@
 
             <h1>CADASTRO DE CLIENTES</h1>
 
-            <form>
+            <form action="{{url('/cliente/inserir')}}" method="post">
+            {{csrf_field()}}
                 <div class="first-group">
                     <div class="personal-informations">
                         <label for="Nome">Nome</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Nome">
+                        <input type="text" class="form-control" name ="txNome" placeholder="Nome">
                     </div>
 
                     <div class="date">
                         <label for="Date">Data de nascimento</label>
-                        <input type="Date" class="form-control" id="inputDate" placeholder="DD/MM/AAAA">
+                        <input type="Date" class="form-control" name ="txData" placeholder="DD/MM/AAAA">
                     </div>
 
                     <div class="marital-status">
                         <label for="Estado-Civil">Estado Civil</label>
-                        <select id="inputEstadoCivil" class="form-control">
+                        <select name="txEstadoCivil" class="form-control">
                             <option selected="selected">Escolher...</option>
                             <option>Solteiro(a)</option>
                             <option>Casado(a)</option>
@@ -90,15 +91,23 @@
                         <input
                             type="text"
                             class="form-control"
-                            id="inputAddress"
-                            placeholder="Rua dos Bobos, nº 0">
+                            name="txEndereco"
+                            placeholder="Rua dos Bobos">
+                    </div>
+                    <div class="number">
+                        <label for="inputNumber">Número</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="txNumero"
+                            placeholder="101">
                     </div>
                     <div class="complement">
                         <label for="inputAddress2">Complemento</label>
                         <input
                             type="text"
                             class="form-control"
-                            id="inputComplement"
+                            name="txComplemento"
                             placeholder="Apartamento, hotel, casa, etc.">
                     </div>
                 </div>
@@ -106,11 +115,11 @@
                 <div class="thrid-group">
                     <div class="city">
                         <label for="inputCity">Cidade</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <input type="text" class="form-control" name="txCidade">
                     </div>
                     <div class="state">
                         <label for="inputEstado">Estado</label>
-                        <select id="inputEstado" class="form-control">
+                        <select name="txEstado" class="form-control">
                             <option selected="selected">Escolher...</option>
                             <option>AC</option>
                             <option>AL</option>
@@ -143,7 +152,7 @@
                     </div>
                     <div class="cep">
                         <label for="inputCEP">CEP</label>
-                        <input type="text" class="form-control" id="inputCEP">
+                        <input type="text" class="form-control" name="txCep">
                     </div>
                 </div>
             </div>
@@ -151,14 +160,14 @@
             <div class="fourth-group">
                 <div class="rg">
                     <label for="inputRg">RG</label>
-                    <input type="text" class="form-control" id="inputRg" placeholder="00.000.000-X">
+                    <input type="text" class="form-control" name="txRg" placeholder="00.000.000-X">
                 </div>
                 <div class="cpf">
                     <label for="inputCpf">CPF</label>
                     <input
                         type="text"
                         class="form-control"
-                        id="inputCpf"
+                        name="txCpf"
                         placeholder="000000000/00">
                 </div>
             </div>
@@ -166,24 +175,75 @@
             <div class="fifth-group">
                 <div class="email">
                     <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="email" class="form-control" name="txEmail" placeholder="Email">
                 </div>
                 <div class="telefone">
                     <label for="inputTelefone">Telefone</label>
                     <input
                         type="tel"
                         class="form-control"
-                        id="inputTelefone"
+                        name="txTelefone"
                         placeholder="Telefone">
                 </div>
                 <div class="cellphone">
                     <label for="inputCellphone">Celular</label>
-                    <input type="tel" class="form-control" id="inputCelular" placeholder="Celular">
+                    <input type="tel" class="form-control" name="txCelular" placeholder="Celular">
                 </div>
             </div>
             <br/>
             <button type="submit" class="btn btn-primary" id="btn-cadastrar-cliente">Entrar</button>
         </form>
+
+        <br />
+
+        <div class="tableCli">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Nascimento</th>
+                    <th scope="col">Estado Civil</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Complemento</th>
+                    <th scope="col">CEP</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">RG</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Fone</th>
+                    <th scope="col">Celular</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($cliente as $cli)
+
+                <tr>
+                    <td>{{$cli->idCliente}}</td>
+                    <td>{{$cli->nome}}</td>
+                    <td>{{$cli->dtNasc}}</td>
+                    <td>{{$cli->estadoCivil}}</td>
+                    <td>{{$cli->endereco}}</td>
+                    <td>{{$cli->numero}}</td>
+                    <td>{{$cli->complemento}}</td>
+                    <td>{{$cli->cep}}</td>
+                    <td>{{$cli->cidade}}</td>
+                    <td>{{$cli->estado}}</td>
+                    <td>{$cli->RG}}</td>
+                    <td>{{$cli->cpf}}</td>
+                    <td>{{$cli->email}}</td>
+                    <td>{{$cli->fone}}</td>
+                    <td>{{$cli->celular}}
+                    </td>
+                </tr>
+
+                @endforeach
+
+            </tbody>
+        </table>
+        </div>
 
         <footer>
             <p>Desenvolvido por: Rennan Moura<br>
