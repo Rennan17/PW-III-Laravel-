@@ -36,7 +36,10 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categoria = new CategoriaModel();
+
+        $categoria-> idCat = $request->TxidCat;
+        $categoria-> categoriaa = $request->txCategoria;
     }
 
     /**

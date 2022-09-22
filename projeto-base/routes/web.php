@@ -26,6 +26,7 @@ Route::get('cliente', 'App\Http\Controllers\ClienteController@Index');
 Route::post('/cliente/inserir','App\Http\Controllers\ClienteController@store');
 
 Route::get('categoria', 'App\Http\Controllers\CategoriaController@Index'); 
+Route::post('/categoria/inserir','App\Http\Controllers\CategoriaController@store');
 
 
 Route::get('/produto', function () {   

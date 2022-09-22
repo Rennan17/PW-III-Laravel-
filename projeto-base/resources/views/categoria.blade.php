@@ -61,52 +61,54 @@
 
             <h1>CADASTRO DE CATEGORIA</h1>
             <section>
-            <form>
-                <div class="categoria">
-                    <div class="idCategoria">
-                        <input type="hidden" class="form-control" id="inputIdcategoria">
+                <section>
+                    <form action="{{url('/categoria/inserir')}}" method="post">
+                    {{csrf_field()}}
+                        <div class="categoria">
+                            <div class="idCategoria">
+                                <input type="hidden" class="form-control" name="txidCat">
+                            </div>
+
+                            <div class="categoria">
+                                <label for="Categoria">Categoria</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="txCategoria"
+                                    placeholder="Categoria">
+                            </div>
+                        </div>
+
+                        <br/>
+                        <button type="submit" class="btn btn-primary" id="btn-cadastrar-categoria">Cadastrar</button>
+                    </form>
+
+                    <br/>
+                    <div class="tableCat">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Categoria</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach($categoria as $cat)
+                                <tr>
+
+                                    <td>{{$cat->categoria}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+
+                        </table>
                     </div>
+                </section>
+                <footer>
+                    <p>Desenvolvido por: Rennan Moura<br>
+                        <a href="mailto:rsmoura252@gmail.com">rsmoura252@gmail.com</a>
+                    </p>
+                </footer>
 
-                    <div class="categoria">
-                        <label for="Categoria">Categoria</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="inputCategoria"
-                            placeholder="Categoria">
-                    </div>
-                </div>
-
-                <br/>
-                <button type="submit" class="btn btn-primary" id="btn-cadastrar-categoria">Cadastrar</button>
-            </form>
-
-            <br/>
-            <div class="tableCat">
-                <table class="table table-dark table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Categoria</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach($categoria as $cat)
-                        <tr>
-
-                            <td>{{$cat->categoria}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-
-                </table>
-            </div>
-            </section>
-            <footer>
-                <p>Desenvolvido por: Rennan Moura<br>
-                    <a href="mailto:rsmoura252@gmail.com">rsmoura252@gmail.com</a>
-                </p>
-            </footer>
-
-        </body>
-    </html>
+            </body>
+        </html>
